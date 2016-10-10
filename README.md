@@ -8,7 +8,7 @@ Simple callout-style dropdown menu
 Install simple-dropdown with Bower
 
 ```sh
-$ bower install simple-dropdown --save
+$ bower install simple-dropdown-menu --save
 ```
 
 Import it into the `<head>` of your page
