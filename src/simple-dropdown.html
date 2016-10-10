@@ -1,0 +1,162 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../simple-button/simple-button.html">
+<link rel="import" href="../iron-icons/iron-icons.html">
+<link rel="import" href="../simple-callout/simple-callout.html">
+<link rel="import" href="./simple-dropdown-item.html">
+
+<dom-module id="simple-dropdown">
+  <template>
+    <style>
+      /**
+       * Defaults
+       */
+      :root {
+        --simple-dropdown-gutter: 5px;
+        --simple-dropdown-offset: -3px;
+        --simple-dropdown-icon-size: 18px;
+      }
+
+      /**
+       * Core
+       */
+      :host, *, *::before, *::after {
+        box-sizing: border-box;
+        -moz-osx-font-smoothing: grayscale;
+         -webkit-font-smoothing: antialiased;
+                 font-smoothing: antialiased;
+      }
+
+      :host {
+        display: inline-block;
+        position: relative;
+      }
+
+      *[hidden] {
+        display: none !important;
+      }
+
+      /**
+       * Toggle button
+       */
+      .toggle {
+        display: block;
+        cursor: pointer;
+        @apply(--simple-dropdown-toggle);
+      }
+
+      .toggle__icon {
+        --iron-icon-width: var(--simple-dropdown-icon-size);
+        --iron-icon-height: var(--simple-dropdown-icon-size);
+        transition: transform 90ms ease;
+      }
+
+      .toggle__icon[data-opened] {
+        transform: rotate(180deg);
+      }
+
+      /**
+       * Menu
+       */
+      .menu {
+        position: absolute;
+        top: 100%;
+        z-index: 999999;
+        @apply(--simple-dropdown-menu)
+      }
+
+      :host([origin*="top"]) .menu {
+        top: calc(100% + var(--simple-dropdown-gutter));
+      }
+
+      :host([origin*="bottom"]) .menu {
+        bottom: calc(100% + var(--simple-dropdown-gutter));
+      }
+
+      :host([origin*="right"]) .menu {
+        right: var(--simple-dropdown-offset);
+      }
+
+      :host([origin*="left"]) .menu {
+        left: var(--simple-dropdown-offset);
+      }
+    </style>
+
+    <span class="toggle" on-tap="_handleTap">
+      <iron-icon
+        class="toggle__icon"
+        icon="icons:expand-more"
+        data-opened$="[[active]]"
+        hidden$="[[noIcon]]">
+      </iron-icon>
+    </span>
+
+    <simple-callout
+      class="menu"
+      origin="[[origin]]"
+      active="{{active}}"
+      arrow
+    >
+      <content></content>
+    </simple-callout>
+
+  </template>
+
+  <script>
+    class SimpleDropdown {
+      beforeRegister() {
+        this.is = 'simple-dropdown';
+
+        this.properties = {
+
+          /**
+           * Whether menu open or not
+           * @type {Boolean}
+           */
+          active: {
+            type: Boolean,
+            value: false
+          },
+
+          /**
+           * Where the menu should open from
+           * (top | bottom) (left | right)
+           * @type {String}
+           */
+          origin: {
+            type: String,
+            reflectToAttribute: true
+          },
+
+          /**
+           * Whether menu should provide tap-to-open functionality
+           * Disable if active will be triggered another way
+           * @type {Boolean}
+           */
+          noTap: Boolean,
+
+          /**
+           * Whether or not we should use icon for toggle button
+           * @type {Boolean}
+           */
+          noIcon: Boolean
+
+        };
+      }
+
+      /**
+       * Utility method to toggle menu
+       * @return {undefined}
+       */
+      toggle() {
+        this.active = !this.active
+      }
+
+      _handleTap() {
+        if (!this.noTap) {
+          this.toggle();
+        }
+      }
+    }
+    Polymer(SimpleDropdown);
+  </script>
+</dom-module>

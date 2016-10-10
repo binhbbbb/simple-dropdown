@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>simple-dropdown</title>
+    <script src="../../webcomponentsjs/webcomponents.min.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../test-fixture/test-fixture-mocha.js"></script>
+    <link rel="import" href="../../test-fixture/test-fixture.html">
+
+    <!-- Import the element to test -->
+    <link rel="import" href="../simple-dropdown.html">
+
+    <!-- Setup fixtures -->
+    <script>
+      (function() {
+        window.fixtures = window.fixtures || {};
+        window.fixtures['simple-dropdown'] = {
+        };
+      })();
+    </script>
+
+  </head>
+  <body>
+    <test-fixture id="default">
+      <template>
+        <simple-dropdown></simple-dropdown>
+      </template>
+    </test-fixture>
+    <script>
+      describe('<simple-dropdown>', function() {
+
+        var component,
+            componentFixtures;
+
+        componentFixtures = window.fixtures;
+
+        beforeEach(function() {
+          component = fixture('default');
+        });
+
+        it('is okay', function() {
+          expect(component).to.be.ok;
+        });
+
+        it('toggles active with toggle() method', function() {
+          component.active = false;
+          component.toggle();
+          expect(component.active).to.be.true;
+          component.toggle();
+          expect(component.active).to.be.false;
+        });
+
+        describe('toggle tap', function() {
+
+          it('toggles active on toggle tap', function() {
+            var toggle = component.querySelector('.toggle');
+
+            component.active =false;
+            toggle.click();
+            expect(component.active).to.be.true;
+            toggle.click();
+            expect(component.active).to.be.false;
+          });
+
+          it('does not toggle active on tap if noTap is true', function() {
+            var toggle = component.querySelector('.toggle');
+
+            component.active = false;
+            component.noTap = true;
+            toggle.click();
+            expect(component.active).to.be.false;
+          });
+
+        });
+
+      });
+    </script>
+  </body>
+</html>
