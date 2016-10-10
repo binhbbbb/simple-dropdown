@@ -1,6 +1,6 @@
 {
   "name": "simple-dropdown",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Simple callout-style dropdown menu",
   "main": "simple-dropdown.html",
   "scripts": {
