@@ -94,7 +94,7 @@
       class="menu"
       origin="[[origin]]"
       active="{{active}}"
-      arrow
+      arrow=[[arrow]]
     >
       <content></content>
     </simple-callout>
@@ -126,6 +126,12 @@
             type: String,
             reflectToAttribute: true
           },
+
+          /**
+           * Whether menu should have callout arrow or not
+           * @type {Boolean}
+           */
+          arrow: Boolean,
 
           /**
            * Whether menu should provide tap-to-open functionality

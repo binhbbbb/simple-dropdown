@@ -35,9 +35,10 @@ Property    | Type    | Default               | Description
 `origin`    | String  | `''`                  | Position the menu should open from. Can be any combination of `'top'`, `'bottom'`, `'left'`, `'center`, or `'right'`.                                                                
 `noTap`     | Boolean | `false`               | Disable openeing menu on tap/click                                                                                                                                        
 `noIcon`    | Boolean | `false`               | Disable icon in toggle button                                                                                                                                             
+`arrow`     | Boolean | `false`               | Add a callout-style arrow to the dropdown menu    
 
 ```html
-<simple-dropdown position="top left" no-icon></simple-dropdown> 
+<simple-dropdown position="top left" arrow no-icon></simple-dropdown> 
 ```
 
 ## Methods
