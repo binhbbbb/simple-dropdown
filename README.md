@@ -72,11 +72,10 @@ MIT © [Simpla](friends@simpla.io)
 
 [webcomponents]: https://github.com/webcomponents/webcomponentsjs
 
-[bower-badge]: https://img.shields.io/bower/v/simple-dropdown.svg
-[bowerlicense-badge]: https://img.shields.io/bower/l/simple-dropdown.svg
+[bower-badge]: https://img.shields.io/bower/v/simple-dropdown-menu.svg
 [travis-badge]: https://img.shields.io/travis/SimpleElements/simple-dropdown.svg
 [travis-url]: https://travis-ci.org/SimpleElements/simple-dropdown
 [bowerdeps-badge]: https://img.shields.io/gemnasium/SimpleElements/simple-dropdown.svg
-[bowerdeps-url]: https://gemnasium.com/bower/simple-dropdown
+[bowerdeps-url]: https://gemnasium.com/bower/simple-dropdown-menu
 [size-badge]: https://badges.herokuapp.com/size/github/SimpleElements/simple-dropdown/master/simple-dropdown.html?gzip=true&color=blue
 [browser-badges]: https://badges.herokuapp.com/travis/SimpleElements/simple-dropdown/sauce/SimpleElements?labels=none
