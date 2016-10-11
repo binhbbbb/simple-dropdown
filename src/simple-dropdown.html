@@ -8,15 +8,6 @@
   <template>
     <style>
       /**
-       * Defaults
-       */
-      :root {
-        --simple-dropdown-gutter: 5px;
-        --simple-dropdown-offset: -3px;
-        --simple-dropdown-icon-size: 18px;
-      }
-
-      /**
        * Core
        */
       :host, *, *::before, *::after {
@@ -46,8 +37,8 @@
 
       .toggle__icon {
         display: block;
-        --iron-icon-width: var(--simple-dropdown-icon-size);
-        --iron-icon-height: var(--simple-dropdown-icon-size);
+        --iron-icon-width: var(--simple-dropdown-icon-size, 18px);
+        --iron-icon-height: var(--simple-dropdown-icon-size, 18px);
         transition: transform 90ms ease;
       }
 
@@ -66,19 +57,19 @@
       }
 
       :host([origin*="top"]) .menu {
-        top: calc(100% + var(--simple-dropdown-gutter));
+        top: calc(100% + var(--simple-dropdown-gutter, 5px));
       }
 
       :host([origin*="bottom"]) .menu {
-        bottom: calc(100% + var(--simple-dropdown-gutter));
+        bottom: calc(100% + var(--simple-dropdown-gutter, 5px));
       }
 
       :host([origin*="right"]) .menu {
-        right: var(--simple-dropdown-offset);
+        right: var(--simple-dropdown-offset, -3px);
       }
 
       :host([origin*="left"]) .menu {
-        left: var(--simple-dropdown-offset);
+        left: var(--simple-dropdown-offset, -3px);
       }
     </style>
 
