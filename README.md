@@ -57,12 +57,29 @@ Property                        | Default   | Description
 `--simple-dropdown-offset`      | `-5px`    | Left/right offset of the dropdown menu when open, relative to the toggle
 
 
-
 Apply properties on simple-dropdown
 
 ```css
 simple-dropdown {
   --simple-dropdown-icon-size: 1rem;
+}
+```
+
+
+Mixin                      |  Description                            
+---------------------------| ------------                           
+`--simple-dropdown-toggle` | Mixin applied to the toggle button
+`--simple-dropdown-menu`   | Mixin applied to the menu
+
+Define mixins on simple-dropdown
+
+```css
+simple-dropdown {
+  --simple-dropdown-menu: {
+    background: blue;
+    color: white;
+    padding: 12px 18px;
+  }
 }
 ```
 
