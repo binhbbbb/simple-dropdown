@@ -50,11 +50,12 @@ Method     | Arguments | Description
 ## Styling
 Style simple-dropdown with custom CSS properties and mixins
 
-Property                        | Default   | Description                            
------------------------------   | --------- | ------------                           
-`--simple-dropdown-icon-size`   | `18px`    | Size of the toggle icon           
-`--simple-dropdown-gutter`      | `0`       | Spacing between the toggle and the menu when open
-`--simple-dropdown-offset`      | `-5px`    | Left/right offset of the dropdown menu when open, relative to the toggle
+Property                          | Default   | Description                            
+--------------------------------- | --------- | ------------                           
+`--simple-dropdown-icon-size`     | `18px`    | Size of the toggle icon           
+`--simple-dropdown-gutter`        | `0`       | Spacing between the toggle and the menu when open
+`--simple-dropdown-offset`        | `-5px`    | Left/right offset of the dropdown menu when open, relative to the toggle
+`--simple-dropdown-border-radius` | `3px`     | Border radius applied to menu
 
 
 Apply properties on simple-dropdown

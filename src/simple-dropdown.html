@@ -53,6 +53,7 @@
         position: absolute;
         top: 100%;
         z-index: 999999;
+        border-radius: var(--simple-dropdown-border-radius, 3px);
         @apply(--simple-dropdown-menu)
       }
 
@@ -70,6 +71,16 @@
 
       :host([origin*="left"]) .menu {
         left: var(--simple-dropdown-offset, -3px);
+      }
+
+      .menu ::content > *:first-child {
+        border-top-left-radius: var(--simple-dropdown-border-radius, 3px);
+        border-top-right-radius: var(--simple-dropdown-border-radius, 3px);
+      }
+
+      .menu ::content > *:last-child {
+        border-bottom-left-radius: var(--simple-dropdown-border-radius, 3px);
+        border-bottom-right-radius: var(--simple-dropdown-border-radius, 3px);
       }
     </style>
 
