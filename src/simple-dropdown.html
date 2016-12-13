@@ -30,9 +30,16 @@
        * Toggle button
        */
       .toggle {
-        display: block;
+        display: flex;
+        align-items: center;
         cursor: pointer;
         @apply(--simple-dropdown-toggle);
+      }
+
+      .toggle__label {
+        line-height: 1;
+        margin-right: 0.2em;
+        padding-bottom: 0.1em;
       }
 
       .toggle__icon {
@@ -85,6 +92,12 @@
     </style>
 
     <span class="toggle" on-tap="_handleTap">
+      <span
+        class="toggle__label"
+        hidden$="[[!label]]">
+        [[label]]
+      </span>
+
       <iron-icon
         class="toggle__icon"
         icon="icons:expand-more"
@@ -129,6 +142,15 @@
           origin: {
             type: String,
             reflectToAttribute: true
+          },
+
+          /**
+           * Optional label to include in toggle button
+           * @type {String}
+           */
+          label: {
+            type: String,
+            value: ''
           },
 
           /**

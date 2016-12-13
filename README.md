@@ -33,6 +33,7 @@ Property    | Type    | Default               | Description
 ----------- | ------- | -----------------     | ------------                                                                                                                                                              
 `active`    | Boolean | `false`               | Whether the dropdown is open or not                                                                                                                                       
 `origin`    | String  | `''`                  | Position the menu should open from. Can be any combination of `'top'`, `'bottom'`, `'left'`, `'center`, or `'right'`.                                                                
+`label`     | String  | `''`                  | Optional label to display in toggle button
 `noTap`     | Boolean | `false`               | Disable openeing menu on tap/click                                                                                                                                        
 `noIcon`    | Boolean | `false`               | Disable icon in toggle button                                                                                                                                             
 `arrow`     | Boolean | `false`               | Add a callout-style arrow to the dropdown menu    
