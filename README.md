@@ -1,5 +1,5 @@
 # Simple Dropdown
-[![Build status][travis-badge]][travis-url] [![Bower dependencies][bowerdeps-badge]][bowerdeps-url] ![Version][bower-badge] ![Size][size-badge]<br/>[![Cross browser test status][browser-badges]][travis-url]
+[![Build status][travis-badge]][travis-url] [![Bower dependencies][bowerdeps-badge]][bowerdeps-url] ![Version][bower-badge] ![Size][size-badge]
 
 Simple callout-style dropdown menu
 
@@ -38,8 +38,13 @@ Property    | Type    | Default               | Description
 `noIcon`    | Boolean | `false`               | Disable icon in toggle button                                                                                                                                             
 `arrow`     | Boolean | `false`               | Add a callout-style arrow to the dropdown menu    
 
+Properties can either be set as attributes on the element, or imperitively with Javascript
 ```html
 <simple-dropdown position="top left" arrow no-icon></simple-dropdown> 
+
+<script>
+    document.querySelector('simple-dropdown').active = true;
+</script>
 ```
 
 ## Methods
@@ -97,4 +102,3 @@ MIT © [Simpla](friends@simpla.io)
 [bowerdeps-badge]: https://img.shields.io/gemnasium/SimpleElements/simple-dropdown.svg
 [bowerdeps-url]: https://gemnasium.com/bower/simple-dropdown-menu
 [size-badge]: https://badges.herokuapp.com/size/github/SimpleElements/simple-dropdown/master/simple-dropdown.html?gzip=true&color=blue
-[browser-badges]: https://badges.herokuapp.com/travis/SimpleElements/simple-dropdown/sauce/SimpleElements?labels=none
