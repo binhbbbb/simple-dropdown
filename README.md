@@ -10,6 +10,10 @@ Simple, lightweight, style-agnostic popout/dropdown menu
     <script src="../webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="simple-dropdown.html">
     <style>
+      body {
+        min-height: 100px
+      }
+      
       simple-dropdown {
         float: right;
         margin-right: 40px;
