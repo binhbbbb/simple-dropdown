@@ -1,8 +1,15 @@
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../simple-button/simple-button.html">
-<link rel="import" href="../iron-icons/iron-icons.html">
 <link rel="import" href="../simple-callout/simple-callout.html">
-<link rel="import" href="./simple-dropdown-item.html">
+<link rel="import" href="../iron-iconset-svg/iron-iconset-svg.html">
+<link rel="import" href="../iron-icon/iron-icon.html" async>
+
+<iron-iconset-svg name="simple-dropdown">
+  <svg>
+    <defs>
+      <g id="expand-more"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></g>
+    </defs>
+  </svg>
+</iron-iconset-svg>
 
 <dom-module id="simple-dropdown">
   <template>
@@ -100,7 +107,7 @@
 
       <iron-icon
         class="toggle__icon"
-        icon="icons:expand-more"
+        icon="simple-dropdown:expand-more"
         data-opened$="[[active]]"
         hidden$="[[noIcon]]">
       </iron-icon>

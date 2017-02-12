@@ -1,5 +1,5 @@
 # Simple Dropdown
-[![Build status][travis-badge]][travis-url] [![Bower dependencies][bowerdeps-badge]][bowerdeps-url] ![Version][bower-badge] ![Size][size-badge]
+[![Build status][travis-badge]][travis-url] [![Bower dependencies][bowerdeps-badge]][bowerdeps-url] ![Version][bower-badge] ![Size][size-badge] [![Published][webcomponents-badge]][webcomponents-url]
 
 Simple callout-style dropdown menu
 
@@ -17,15 +17,30 @@ Import it into the `<head>` of your page
 <link rel="import" href="/bower_components/simple-dropdown/simple-dropdown.html">
 ```
 
-Then use simple-dropdown in your project, and add simple-dropdown-item children for menu items
+Then use simple-dropdown in your project, and toggle the `active` property to open/close the dropdown
 
 ```html
-<simple-dropdown>
+<simple-dropdown id="dropdown">
   <a href="/settings">user settings</a>
 </simple-dropdown>
+
+<script>
+  // Open the dropdown
+  document.querySelector('#dropdown').active = true;
+</script>
 ```
 
-Note for cross-browser support you should also include the [Web Components Polyfill][webcomponents].
+#### Polyfills for cross-browser support
+Simple drawer relies on emerging standards, for full cross-browser support include the [Web Components Lite][webcomponents] polyfill.
+
+```sh
+bower i webcomponentsjs --save
+```
+
+```html
+<script src="/bower_components/webcomponentsjs/web-components-lite.js"></script>
+```
+
 
 ## Options
 
@@ -43,7 +58,7 @@ Properties can either be set as attributes on the element, or imperitively with 
 <simple-dropdown position="top left" arrow no-icon></simple-dropdown> 
 
 <script>
-    document.querySelector('simple-dropdown').active = true;
+    document.querySelector('simple-dropdown').noTap = true;
 </script>
 ```
 
@@ -102,3 +117,5 @@ MIT © [Simpla](friends@simpla.io)
 [bowerdeps-badge]: https://img.shields.io/gemnasium/SimpleElements/simple-dropdown.svg
 [bowerdeps-url]: https://gemnasium.com/bower/simple-dropdown-menu
 [size-badge]: https://badges.herokuapp.com/size/github/SimpleElements/simple-dropdown/master/simple-dropdown.html?gzip=true&color=blue
+[webcomponents-badge]: https://img.shields.io/badge/webcomponents.org-published-blue.svg
+[webcomponents-url]: https://www.webcomponents.org/element/SimpleElements/simple-dropdown
