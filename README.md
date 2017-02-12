@@ -11,17 +11,16 @@ Simple, lightweight, style-agnostic popout/dropdown menu
     <link rel="import" href="simple-dropdown.html">
     <style>
       body {
-        min-height: 100px
+      min-height: 100px
       }
-      
       simple-dropdown {
-        float: right;
-        margin-right: 40px;
+        margin-left: 20px;
         font-family: sans-serif;
         font-size: 14px;
       }
       simple-dropdown div {
         padding: 10px 16px;
+        font-size: 12px
       }
     </style>
     <next-code-block></next-code-block>
@@ -30,7 +29,7 @@ Simple, lightweight, style-agnostic popout/dropdown menu
 ```
 -->
 ```html
-<simple-dropdown origin="top right">
+<simple-dropdown origin="top right" label="menu" arrow>
   <div>Menu item</div>
 </simple-dropdown>
 ```
