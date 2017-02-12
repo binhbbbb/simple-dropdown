@@ -30,7 +30,7 @@ Simple, lightweight, style-agnostic popout/dropdown menu
 -->
 ```html
 <simple-dropdown origin="top right" label="menu" arrow>
-  <div>Menu item</div>
+  <div>item</div>
 </simple-dropdown>
 ```
 
