@@ -1,7 +1,35 @@
 # Simple Dropdown
 [![Build status][travis-badge]][travis-url] [![Bower dependencies][bowerdeps-badge]][bowerdeps-url] ![Version][bower-badge] ![Size][size-badge] [![Published][webcomponents-badge]][webcomponents-url]
 
-Simple callout-style dropdown menu
+Simple, lightweight, style-agnostic popout/dropdown menu
+
+<!---
+```
+<custom-element-demo>
+  <template>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="simple-dropdown.html">
+    <style>
+      simple-dropdown {
+        float: right;
+        margin-right: 40px;
+        font-family: sans-serif;
+        font-size: 14px;
+      }
+      simple-dropdown div {
+        padding: 10px 16px;
+      }
+    </style>
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
+```
+-->
+```html
+<simple-dropdown origin="top right">
+  <div>Menu item</div>
+</simple-dropdown>
+```
 
 ### Installation & usage
 
