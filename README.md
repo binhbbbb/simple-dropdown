@@ -93,12 +93,6 @@ Properties can either be set as attributes on the element, or imperitively with 
 </script>
 ```
 
-## Methods
-
-Method     | Arguments | Description                                          
----------- | --------- | ------------                                         
-`toggle()` | `none`    | Utility method to that toggles the `active` property
-
 ## Styling
 Style simple-dropdown with custom CSS properties and mixins
 

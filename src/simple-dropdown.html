@@ -121,6 +121,7 @@
       origin="[[origin]]"
       active="{{active}}"
       arrow=[[arrow]]
+      no-escape="[[noEscape]]"
       no-blur
     >
       <content></content>
@@ -164,7 +165,7 @@
           },
 
           /**
-           * Whether menu should have callout arrow or not
+           * Whether menu should have callout arrow
            * @type {Boolean}
            */
           arrow: Boolean,
@@ -177,10 +178,22 @@
           noTap: Boolean,
 
           /**
-           * Whether or not we should use icon for toggle button
+           * Whether to use icon for toggle button
            * @type {Boolean}
            */
           noIcon: Boolean,
+
+          /**
+           * Whether menu should close when it loses focus
+           * @type {[type]}
+           */
+          noBlur: Boolean,
+
+          /**
+           * Whether menu should close on escape keypress
+           * @type {[type]}
+           */
+          noEscape: Boolean,
 
           /**
            * Make menu focuseable
@@ -201,20 +214,14 @@
       }
 
       _closeOnBlur(e) {
-        this.active = false;
-      }
-
-      /**
-       * Utility method to toggle menu
-       * @return {undefined}
-       */
-      toggle() {
-        this.active = !this.active
+        if (!this.noBlur) {
+          this.active = false;
+        }
       }
 
       _toggleMenu() {
         if (!this.noTap) {
-          this.toggle();
+          this.active = !this.active;
         }
       }
     }

@@ -30,15 +30,7 @@
           expect(component).to.be.ok;
         });
 
-        it('toggles active with toggle() method', function() {
-          component.active = false;
-          component.toggle();
-          expect(component.active).to.be.true;
-          component.toggle();
-          expect(component.active).to.be.false;
-        });
-
-        describe('toggle tap', function() {
+        describe('toggle', function() {
 
           it('toggles active on toggle tap', function() {
             var toggle = component.querySelector('.toggle');
@@ -57,6 +49,27 @@
             component.noTap = true;
             toggle.click();
             expect(component.active).to.be.false;
+          });
+
+        });
+
+        describe('closing', function() {
+
+          it('closes when focus is lost', function() {
+            component.active = true;
+            setTimeout(function() {
+              document.body.click();
+              setTimeout(function() {
+                expect(component.active).to.be.false;
+              }, 0);
+            }, 0);
+          });
+
+          it('does not close when focus is lost and noBlur is true', function() {
+            component.active = true;
+            component.noBlur = true;
+            document.body.click();
+            expect(component.active).to.be.true;
           });
 
         });
