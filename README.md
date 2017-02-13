@@ -39,7 +39,7 @@ Simple, lightweight, style-agnostic popout/dropdown menu
 Install simple-dropdown with Bower
 
 ```sh
-$ bower install simple-dropdown-menu --save
+$ bower i SimpleElements/simple-dropdown --save
 ```
 
 Import it into the `<head>` of your page

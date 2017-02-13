@@ -115,6 +115,7 @@
     </span>
 
     <simple-callout
+      id="menu"
       class="menu"
       origin="[[origin]]"
       active="{{active}}"
@@ -181,6 +182,10 @@
           noIcon: Boolean
 
         };
+
+        this.observers = [
+          '_focusMenuOnActive(active)'
+        ]
       }
 
       /**
@@ -194,6 +199,18 @@
       _handleTap() {
         if (!this.noTap) {
           this.toggle();
+        }
+      }
+
+      /**
+       * Give focus to menu when it opens
+       * Preserves blur-to-close behavior
+       * @param  {Boolean} active Value of the active property
+       * @return {undefined}
+       */
+      _focusMenuOnActive(active) {
+        if (active) {
+          this.$['menu'].focus();
         }
       }
     }
