@@ -19,14 +19,15 @@
        */
       :host, *, *::before, *::after {
         box-sizing: border-box;
-        -moz-osx-font-smoothing: grayscale;
-         -webkit-font-smoothing: antialiased;
-                 font-smoothing: antialiased;
       }
 
       :host {
         display: inline-block;
         position: relative;
+        outline: none;
+        -moz-osx-font-smoothing: grayscale;
+         -webkit-font-smoothing: antialiased;
+                 font-smoothing: antialiased;
       }
 
       *[hidden] {
@@ -99,7 +100,7 @@
       }
     </style>
 
-    <span class="toggle" on-tap="_handleTap">
+    <a class="toggle" on-tap="_toggleMenu">
       <span
         class="toggle__label"
         hidden$="[[!label]]">
@@ -112,7 +113,7 @@
         data-opened$="[[active]]"
         hidden$="[[noIcon]]">
       </iron-icon>
-    </span>
+    </a>
 
     <simple-callout
       id="menu"
@@ -120,6 +121,7 @@
       origin="[[origin]]"
       active="{{active}}"
       arrow=[[arrow]]
+      no-blur
     >
       <content></content>
     </simple-callout>
@@ -139,8 +141,7 @@
            */
           active: {
             type: Boolean,
-            notify: true,
-            value: false
+            notify: true
           },
 
           /**
@@ -179,13 +180,28 @@
            * Whether or not we should use icon for toggle button
            * @type {Boolean}
            */
-          noIcon: Boolean
+          noIcon: Boolean,
+
+          /**
+           * Make menu focuseable
+           * @type {Object}
+           */
+          tabindex: {
+            type: Number,
+            reflectToAttribute: true,
+            readonly: true,
+            value: 0
+          }
 
         };
 
-        this.observers = [
-          '_focusMenuOnActive(active)'
-        ]
+        this.listeners = {
+          blur: '_closeOnBlur'
+        }
+      }
+
+      _closeOnBlur(e) {
+        this.active = false;
       }
 
       /**
@@ -196,21 +212,9 @@
         this.active = !this.active
       }
 
-      _handleTap() {
+      _toggleMenu() {
         if (!this.noTap) {
           this.toggle();
-        }
-      }
-
-      /**
-       * Give focus to menu when it opens
-       * Preserves blur-to-close behavior
-       * @param  {Boolean} active Value of the active property
-       * @return {undefined}
-       */
-      _focusMenuOnActive(active) {
-        if (active) {
-          this.$['menu'].focus();
         }
       }
     }
