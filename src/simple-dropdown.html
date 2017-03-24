@@ -22,7 +22,8 @@
       }
 
       :host {
-        display: inline-block;
+        display: inline-flex;
+        flex-direction: column;
         position: relative;
         outline: none;
         -moz-osx-font-smoothing: grayscale;
@@ -40,6 +41,8 @@
       .toggle {
         display: flex;
         align-items: center;
+        flex: 1;
+        height: 100%;
         cursor: pointer;
         @apply(--simple-dropdown-toggle);
       }
