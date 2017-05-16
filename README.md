@@ -65,7 +65,7 @@ Then use simple-dropdown in your project, and toggle the `active` property to op
 Simple dropdown relies on emerging standards, for full cross-browser support include the [Web Components Lite][webcomponents] polyfill.
 
 ```html
-<script src="https://unpkg.com/webcomponents.js@^0.7.24/web-components-lite.min.js" async></script>
+<script src="https://unpkg.com/webcomponents.js@^0.7.24/webcomponents-lite.min.js" async></script>
 ```
 
 
