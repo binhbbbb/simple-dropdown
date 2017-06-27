@@ -22,7 +22,7 @@
   "dependencies": {
     "polymer": "^1.6.0",
     "iron-icon": "PolymerElements/iron-icon#^1.0.12",
-    "simple-callout": "^0.4.0",
+    "simple-callout": "^0.4.3",
     "iron-iconset-svg": "PolymerElements/iron-iconset-svg#^1.1.0"
   },
   "devDependencies": {
