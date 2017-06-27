@@ -71,21 +71,22 @@ Simple dropdown relies on emerging standards, for full cross-browser support inc
 
 ## Options
 
-Property    | Type    | Default               | Description                                                                                                                                                               
------------ | ------- | -----------------     | ------------                                                                                                                                                              
-`active`    | Boolean | `false`               | Whether the dropdown is open or not                                                                                                                                       
-`origin`    | String  | `''`                  | Position the menu should open from. Can be any combination of `'top'`, `'bottom'`, `'left'`, `'center`, or `'right'`.                                                                
-`label`     | String  | `''`                  | Optional label to display in toggle button
-`noTap`     | Boolean | `false`               | Disable openeing menu on tap/click                                                                                                                                        
-`noIcon`    | Boolean | `false`               | Disable icon in toggle button                                                                                                                                             
-`arrow`     | Boolean | `false`               | Add a callout-style arrow to the dropdown menu    
+Property       | Type    | Default                       | Description                                                                                                           
+-----------    | ------- | -----------------             | ------------                                                                                                          
+`active`       | Boolean | `false`                       | Whether the dropdown is open or not                                                                                   
+`origin`       | String  | `''`                          | Position the menu should open from. Can be any combination of `'top'`, `'bottom'`, `'left'`, `'center`, or `'right'`. 
+`label`        | String  | `''`                          | Optional label to display in toggle button                                                                            
+`icon`         | String  | `simple-dropdown:expand-more` | Icon definition, from `iron-iconset`, set to empty string to hide icon                                                
+`noTap`        | Boolean | `false`                       | Disable openeing menu on tap/click                                                                                    
+`noIconRotate` | Boolean | `false`                       | Whether icon should flip when dropdown is open                                                                        
+`arrow`        | Boolean | `false`                       | Add a callout-style arrow to the dropdown menu                                                                        
 
 Properties can either be set as attributes on the element, or imperitively with Javascript
 ```html
-<simple-dropdown position="top left" arrow no-icon></simple-dropdown> 
+<simple-dropdown position="top left" arrow></simple-dropdown> 
 
 <script>
-    document.querySelector('simple-dropdown').noTap = true;
+  document.querySelector('simple-dropdown').active = true;
 </script>
 ```
 

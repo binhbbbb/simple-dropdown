@@ -61,7 +61,7 @@
         transition: transform 90ms ease;
       }
 
-      .toggle__icon[data-opened] {
+      .toggle__icon[data-opened][data-rotate] {
         transform: rotate(180deg);
       }
 
@@ -112,9 +112,10 @@
 
       <iron-icon
         class="toggle__icon"
-        icon="simple-dropdown:expand-more"
+        icon="[[icon]]"
         data-opened$="[[active]]"
-        hidden$="[[noIcon]]">
+        data-rotate$="[[!noIconRotate]]"
+        hidden$="[[!icon]]">
       </iron-icon>
     </a>
 
@@ -181,9 +182,21 @@
 
           /**
            * Whether to use icon for toggle button
+           * @type {String}
+           */
+          icon: {
+            type: String,
+            value: 'simple-dropdown:expand-more'
+          },
+
+          /**
+           * Whether to flip the icon when open
            * @type {Boolean}
            */
-          noIcon: Boolean,
+          noIconRotate: {
+            type: Boolean,
+            value: false
+          },
 
           /**
            * Whether menu should close when it loses focus
