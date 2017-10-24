@@ -5,35 +5,67 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
     <title>simple-dropdown Demo</title>
 
-    <!-- Import Web Components polyfill -->
-    <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
+    <!-- Import demo page deps -->
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@^1.0.0/webcomponents-loader.js"></script>
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
 
-    <!-- Use shadow DOM if available -->
-    <script>
-      window.Polymer = { dom: 'shadow' };
-    </script>
-
-    <!-- Import component -->
+    <!-- Import simple-dropdown -->
     <link rel="import" href="../simple-dropdown.html">
 
+    <!-- Demo styles -->
     <style>
-      simple-dropdown {
-        margin-left: 40px;
+      /* Page styles */
+      body {
         font-family: sans-serif;
-        font-size: 14px;
+        color: #303c46;
       }
-      simple-dropdown div {
-        padding: 10px 16px;
-        font-size: 12px;
+
+      .wrapper {
+        width: 90%;
+        max-width: 38rem;
+        margin: 2rem auto;
+      }
+
+      .demo {
+        display: inline-block;
+        width: 100%;
+        margin: 2rem 0;
+      }
+
+      .demo__title {
+        font-size: 1.4rem;
+        font-weight: 400;
+      }
+
+      simple-dropdown {
+        margin-bottom: 50px;
+      }
+
+      simple-dropdown a {
+        text-decoration: none;
+        color: inherit;
+        font-size: 0.85em;
+        display: inline-block;
+        text-decoration: none;
+        padding: 0.5em 1em;
       }
     </style>
-
   </head>
-  <body unresolved>
 
-    <simple-dropdown origin="top right" arrow>
-      <div>item</div>
-    </simple-dropdown>
+  <body>
+    <div class="wrapper">
 
+      <div class="demo">
+        <h1 class="demo__title">Basic demo</h1>
+        <demo-snippet>
+          <template>
+            <simple-dropdown origin="top right" label="menu" arrow>
+              <a href="#">item</a>
+            </simple-dropdown>
+          </template>
+        </demo-snippet>
+      </div>
+
+    </div>
   </body>
 </html>

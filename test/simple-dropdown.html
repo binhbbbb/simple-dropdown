@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>simple-dropdown</title>
+
+    <!-- Setup WCT -->
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@^1.0.0/webcomponents-loader.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <!-- Import simple-dropdown  -->
+    <link rel="import" href="../simple-dropdown.html">
+
+  </head>
+  <body>
+
+    <test-fixture id="default">
+      <template>
+        <simple-dropdown></simple-dropdown>
+      </template>
+    </test-fixture>
+
+    <script>
+      describe('<simple-dropdown>', () => {
+        let component;
+
+        beforeEach(() => component = fixture('default'));
+
+        it('is okay', () => expect(component).to.be.ok);
+
+        describe('closing', () => {
+          it('closes when focus is lost', () => {
+            component.active = true;
+            setTimeout(() => {
+              component.blur();
+              setTimeout(() => expect(component.active).to.be.false, 0);
+            }, 0);
+          });
+
+          it('does not close when focus is lost and noBlur is true', () => {
+            component.active = true;
+            component.noBlur = true;
+            component.blur();
+            expect(component.active).to.be.true;
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

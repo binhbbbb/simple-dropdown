@@ -1,7 +1,7 @@
 # Simple Dropdown
- ![Version][bower-badge] [![Build status][travis-badge]][travis-url] ![Size][size-badge] [![Published][webcomponents-badge]][webcomponents-url]
+[![Build status][travis-badge]][travis-url] ![Size][size-badge] [![Version][tag-badge]][releases-url] [![Published][webcomponents-badge]][webcomponents-url]
 
-Performant, lightweight, style-agnostic popout/dropdown menu
+Performant, featherweight, style-agnostic dropdown UI component, built on Web Components.
 
 <!---
 ```
@@ -11,16 +11,21 @@ Performant, lightweight, style-agnostic popout/dropdown menu
     <link rel="import" href="simple-dropdown.html">
     <style>
       body {
-      min-height: 100px
-      }
-      simple-dropdown {
-        margin-left: 20px;
         font-family: sans-serif;
-        font-size: 14px;
+        color: #303c46;
       }
-      simple-dropdown div {
-        padding: 10px 16px;
-        font-size: 12px
+      
+      simple-dropdown {
+        margin-bottom: 50px;
+      }
+
+      simple-dropdown a {
+        text-decoration: none;
+        color: inherit;
+        font-size: 0.85em;
+        display: inline-block;
+        text-decoration: none;
+        padding: 0.5em 1em;
       }
     </style>
     <next-code-block></next-code-block>
@@ -30,13 +35,22 @@ Performant, lightweight, style-agnostic popout/dropdown menu
 -->
 ```html
 <simple-dropdown origin="top right" label="menu" arrow>
-  <div>item</div>
+  <a href="#">settings</span>
 </simple-dropdown>
 ```
 
-### Installation & usage
+### Contents
 
-Install simple-dropdown with Bower (Yarn support coming soon)
+- [Installation & usage](#installation--usage)
+  - [Polyfills for cross-browser support](#polyfills-for-cross-browser-support)
+  - [Transpiling for IE11 support](#transpiling-for-ie11-support)
+- [Options](#options)
+- [Styling](#styling)
+
+
+## Installation & usage
+
+Install simple-dropdown with Bower
 
 ```sh
 $ bower i SimpleElements/simple-dropdown --save
@@ -48,26 +62,29 @@ Import it into the `<head>` of your page
 <link rel="import" href="/bower_components/simple-dropdown/simple-dropdown.html">
 ```
 
-Then use simple-dropdown in your project, and toggle the `active` property to open/close the dropdown
+Then use simple-dropdown in your project
 
 ```html
-<simple-dropdown id="dropdown">
-  <a href="/settings">user settings</a>
-</simple-dropdown>
-
-<script>
-  // Open the dropdown
-  document.querySelector('#dropdown').active = true;
-</script>
+<simple-dropdown></simple-dropdown>
 ```
 
-#### Polyfills for cross-browser support
-Simple dropdown relies on emerging standards, for full cross-browser support include the [Web Components Lite][webcomponents] polyfill.
+### Polyfills for cross-browser support
+
+simple-dropdown relies on emerging standards, for full cross-browser support include the [WebComponentsJS](https://github.com/webcomponents/webcomponentsjs) polyfill on your page.
 
 ```html
-<script src="https://unpkg.com/webcomponents.js@^0.7.24/webcomponents-lite.min.js" async></script>
+<script src="https://unpkg.com/@webcomponents/webcomponentsjs@^1.0.0/webcomponents-loader.js"></script>
 ```
 
+### Transpiling for IE11 support
+
+Web Components like simple-dropdown are distributed as ES6 classes, which are supported in all evergreen browsers. To support Internet Explorer 11 you should transpile simple-dropdown to ES5 and use the `webcomponentsjs` `custom-elements-es5-adapter.js` shim. 
+
+The easiest way to do this is by including [polymer-build][polymer-build] in your buildstep of choice. Then just include the ES5 adapter on your page
+
+```html
+<script src="https://unpkg.com/@webcomponents/webcomponentsjs@^1.0.0/custom-elements-es5-adapter.js"></script>
+```
 
 ## Options
 
@@ -129,13 +146,13 @@ simple-dropdown {
 
 ***
 
-MIT © [Simpla](friends@simpla.io)
+MIT © [Sean King](https://www.twitter.com/seaneking)
 
-[webcomponents]: https://github.com/webcomponents/webcomponentsjs
-
-[bower-badge]: https://img.shields.io/bower/v/simple-dropdown-menu.svg
+[tag-badge]: https://img.shields.io/github/tag/SimpleElements/simple-dropdown.svg
+[releases-url]: https://github.com/SimpleElements/simple-dropdown/releases
 [travis-badge]: https://img.shields.io/travis/SimpleElements/simple-dropdown.svg
 [travis-url]: https://travis-ci.org/SimpleElements/simple-dropdown
-[size-badge]: https://badges.herokuapp.com/size/github/SimpleElements/simple-dropdown/master/simple-dropdown.html?gzip=true
+[size-badge]: http://img.badgesize.io/SimpleElements/simple-dropdown/master/simple-dropdown.html?compression=gzip&label=size%20%28unminified%29
 [webcomponents-badge]: https://img.shields.io/badge/webcomponents.org-published-blue.svg
 [webcomponents-url]: https://www.webcomponents.org/element/SimpleElements/simple-dropdown
+[polymer-build]: https://github.com/Polymer/polymer-build
