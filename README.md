@@ -1,5 +1,7 @@
 # Simple Dropdown
 [![Build status][travis-badge]][travis-url] ![Size][size-badge] [![Version][tag-badge]][releases-url] [![Published][webcomponents-badge]][webcomponents-url]
+[![Published on Vaadin  Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/SimpleElementssimple-dropdown)
+[![Stars on Vaadin Directory](https://img.shields.io/vaadin-directory/star/SimpleElementssimple-dropdown.svg)](https://vaadin.com/directory/component/SimpleElementssimple-dropdown)
 
 Performant, featherweight, style-agnostic dropdown UI component, built on Web Components.
 
